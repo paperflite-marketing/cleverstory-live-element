@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="cleverstory__live_element" data-live-element="http://localhost:3001/embedded/5f904ba21683922242e9c5fb"
+    data-width="100%" data-height="100px"></div>
+  <div class="cleverstory__live_element" data-live-element="http://localhost:3001/embedded/5f904b9f1683922242e9c5fa"
+    data-width="100%" data-height="500px"></div>
+
+  <script>
+    (function () {
+      var w = window;
+      var cs = w.Cleverstory;
+      if (typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', w.intercomSettings);
+      } else {
+        var d = document;
+        var f = function () {
+          f.c(arguments);
+        };
+        f.q = [];
+        f.c = function (args) {
+          f.q.push(args);
+
+          console.log(f.q);
+        };
+        w.Cleverstory = f;
+        var l = function () {
+          var s = d.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = 'http://localhost:8081/bundle.js';
+          var x = d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        };
+        if (w.attachEvent) {
+          w.attachEvent('onload', l);
+        } else {
+          w.addEventListener('load', l, false);
+        }
+      }
+    })();
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "Webpack-ES6-starter",
+  "version": "1.0.0",
+  "description": "The simple starter for fast prototyping apps in Vanilla JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babel-register --recursive src/tests",
+    "dev": "webpack-dev-server --open --config config/webpack.dev.js",
+    "build": "webpack --config config/webpack.prod.js"
+  },
+  "author": "Arek Smyk",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "jsdom": "^14.0.0",
+    "mocha": "^6.1.3",
+    "style-loader": "^0.23.1",
+    "uglify-es": "^3.1.8",
+    "uglify-js": "^3.1.8",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "iframe-resizer": "^4.2.11"
+  }
+}
